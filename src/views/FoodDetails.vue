@@ -16,16 +16,15 @@
           }}</sup></i
         >
       </router-link>
-
-      <router-link to="/" class="text-[1.15rem]">
-        <p>Login</p>
-      </router-link>
-      <router-link to="/" class="text-[1.15rem]">
-        <p>Sign up</p>
-      </router-link>
+      <router-link to="/login" class="text-[1.15rem]">
+          <button class="text-orange-500 bg-transparent mt-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600">Login</button>
+        </router-link>
+        <router-link to="/register" class="text-[1.15rem]">
+          <button class="bg-orange-600 text-white px-6 py-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600 hover:bg-white">Sign up</button>
+        </router-link>
     </div>
   </header>
-  <div class="context p-4 flex flex-col items-center">
+  <div class="context p-4 flex flex-col items-center gap-4">
     <h1 class="text-2xl">Add Meal to cart</h1>
     <img :src="details.url" alt="dish" class="w-56 h-56" />
     <div class="description text-[1.2rem]">
@@ -56,6 +55,7 @@
         Remove from cart
       </button>
     </div>
+    <p class='text-blue-700 font-semibold text-xl'>{{ info }}</p>
   </div>
 </template>
 
@@ -64,6 +64,7 @@ export default {
   data() {
     return {
       details: null,
+      info:""
     };
   },
   computed:{
@@ -96,13 +97,19 @@ return this.$store.state.cartItemCount;
 
     goToCart() {
       this.$router.push("/card");
+
     },
     
    addToCart() {
+    this.info=""
       this.$store.dispatch("addToCart",this.details);
+      this.info='Added to cart!'
     },
           removeItem() {
+this.info=""
       this.$store.dispatch("removeItem",this.details);
+      this.info='Removed from cart!'
+
     },
   },
 };

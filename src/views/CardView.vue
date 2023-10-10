@@ -1,32 +1,18 @@
-<!-- <template>
-   <div class="context w-full h-full ">
-<section class="full-cart">
 
-    <div class="summary">
-<h1>Summary</h1>
-<div class="desc-name">
-    <p>Total:</p>
-    <p>Promo Code:</p>
-    <p>Shipping:</p>
+<style>
 
-</div>
-<div class="desc-property">
-<p>20</p>
-<p>SWEETDISH</p>
-<p>20</p>
-</div>
-<hr>
-<div class="subtotal">
-    <p>Subtotal:</p>
-    <p></p>
-</div>
-    </div>
-    <div class="cart">
-<h1>Cart</h1>
+.empty-cart
+{
+   position: absolute;
+   top:50%;
+   left:50%;
+    transform: translate(-50%,-50%);
+    }</style>
 
-    </div>
-</section>
-    <section class="empty-cart">
+
+    <template>
+    
+        <section class="empty-cart" v-if="calculateTotalPrice === 0">
     <div class="empty flex flex-col gap-4 text-[1.2rem]  items-center">
   
 <i class="fa-solid fa-cart-shopping text-blue-600 text-5xl  ">  
@@ -37,24 +23,7 @@
         </router-link>
     </div>
    </section>
-   </div>
-
-
- 
-</template>
-<style>
-
-.empty-cart
-{
-   position: absolute;
-   top:50%;
-   left:50%;
-    transform: translate(-50%,-50%);
-    }</style> -->
-
-
-    <template>
-        <div>
+   <section v-else>
           <h1 class="text-2xl">Shopping Cart</h1>
           <div v-for="(item, index) in cartItems" :key="index" class="cart-item">
             <div class="flex justify-between items-center">
@@ -69,7 +38,7 @@
             </div>
           </div>
           <p>Total Price: {{ calculateTotalPrice }}</p>
-        </div>
+        </section>
       </template>
       
       <script>

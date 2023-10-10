@@ -48,10 +48,10 @@ export default createStore({
    dishesNearYou: [
       {
         id: 9,
-        name: "Macroni",
+        name: "Pasta",
         price: 80,
         url: macroni,
-        desc: "Tasty macronies!",
+        desc: "Tasty pasta!",
         rate: 4.4,
       },
       {

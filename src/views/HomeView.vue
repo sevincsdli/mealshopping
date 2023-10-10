@@ -1,5 +1,6 @@
 <template>
-   <header class=" flex justify-between w-full bg-slate-50 p-4">
+  <div class="min-h-screen">
+    <header class=" flex justify-between w-full bg-slate-50 p-4">
       <router-link to="/">
         <div class="logo flex gap-4">
           <h1 class="font-semibold text-2xl">Sweet <span>Dish</span></h1>
@@ -9,22 +10,21 @@
 
       <div class="cart-login flex mr-4 gap-4">
         <router-link to="/card">
-          <i class=""></i>
           <i
             class="fa-solid fa-cart-shopping mr-2 text-[1.4rem] mt-1 text-blue-700 hover:text-blue-800"
           ><sup class="text-[0.7rem] text-black absolute top-5">{{ count }}</sup></i>
         </router-link>
 
-        <router-link to="/" class="text-[1.15rem]">
-          <p>Login</p>
+        <router-link to="/login" class="text-[1.15rem]">
+          <button class="text-orange-500 bg-transparent mt-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600">Login</button>
         </router-link>
-        <router-link to="/" class="text-[1.15rem]">
-          <p>Sign up</p>
+        <router-link to="/register" class="text-[1.15rem]">
+          <button class="bg-orange-600 text-white px-6 py-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600 hover:bg-white">Sign up</button>
         </router-link>
       </div>
     </header>
   <div class="content px-4 w-full h-full">
-   
+  
     <div class="container w -full h-[50vh] mt-20 ">
       <div class="top">
         <h1 class="font-semibold text-2xl">Top rated</h1>
@@ -37,7 +37,7 @@
       </section>
       </div>
     <div class="all mt-24 ">
-      <h1 class="font-semibold text-2xl">All categories</h1>
+      <h1 class="font-semibold text-2xl">May be interest</h1>
       <section class="flex-wrap mt-6 all-categories flex justify-evenly">
         <div  @click="foodDetails(items)" v-for="items in allCategories" :key="items.id" class="p-4 border-2 border-slate-100 rounded-md hover:shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]   transform scale-100 hover:scale-105 transition-transform duration-3000 ease-in-out cursor-pointer flex flex-col gap-8 text-center">
           <img :src="items.url" alt="dish" class="w-52 h-48">
@@ -66,8 +66,10 @@
 
 
   </div>
-   <!-- <footer class="bg-slate-900 w-full h-16 bottom-0">xcvb</footer> -->
   <!-- <HeaderSection></HeaderSection> -->
+
+  </div>
+   
 </template>
 
 <script>
