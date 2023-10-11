@@ -176,24 +176,6 @@ export default createStore({
         state.cartItemCount--;
       }
     },
-    // removeItem(state, payload) {
-    //   let item = payload;
-    //   item = { ...item, quantity: 1 };
-  
-    //   if (state.cartItems.length > 0) {
-    //     const itemIndex = state.cartItems.findIndex((el) => el.id === item.id);
-  
-    //     if (itemIndex !== -1) {
-    //       if (state.cartItems[itemIndex].quantity > 1) {
-    //         state.cartItems[itemIndex].quantity -= 1;
-    //       } else {
-    //         state.cartItems.splice(itemIndex, 1); // Remove the item from the cart if the quantity is 1
-    //       }
-  
-    //       state.cartItemCount -= 1;
-    //     }
-      
-    //   }}
       
   },
   actions: {

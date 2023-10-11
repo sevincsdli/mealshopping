@@ -66,14 +66,12 @@
 
 
   </div>
-  <!-- <HeaderSection></HeaderSection> -->
 
   </div>
    
 </template>
 
 <script>
-// import HeaderSection from '@/components/HeaderSection.vue';
 export default {
   data() {
     return{
@@ -99,9 +97,8 @@ allCategories()
   methods:
   {
     foodDetails(item) {
-      this.$router.push({ path: `/detail/${item.id}` }); // Pass the item ID as a route parameter
+      this.$router.push({ path: `/detail/${item.id}` }); 
 
-    // this.$router.push({ path: '/detail', params: item });
   },
   }
 };
