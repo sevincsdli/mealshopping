@@ -3,12 +3,12 @@
     <header class=" flex justify-between w-full bg-slate-50 p-4">
       <router-link to="/">
         <div class="logo flex gap-4">
-          <h1 class="font-semibold text-2xl">Sweet <span>Dish</span></h1>
-          <i class="fas fa-pizza-slice w-8 h-8 text-orange-600 text-2xl"></i>
+          <h1 class="font-semibold lg:text-2xl md:text-[1.2rem] sm:text-[1rem]">Sweet <span>Dish</span></h1>
+          <i class="lg:mt-0 md:mt-1 fas fa-pizza-slice w-8 h-8 text-orange-600 lg:text-2xl md:text-[1.2rem] sm:text-[1.1rem]"></i>
         </div>
       </router-link>
 
-      <div class="cart-login flex mr-4 gap-4">
+      <div class="cart-login flex mr-4 gap-4 ">
         <router-link to="/card">
           <i
             class="fa-solid fa-cart-shopping mr-2 text-[1.4rem] mt-1 text-blue-700 hover:text-blue-800"
@@ -16,10 +16,10 @@
         </router-link>
 
         <router-link to="/login" class="text-[1.15rem]">
-          <button class="text-orange-500 bg-transparent mt-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600">Login</button>
+          <button class="xs:text-[1rem] lg:text-xl md:text-[1.2rem] sm:text-[1rem] text-orange-500 bg-transparent mt-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600">Login</button>
         </router-link>
         <router-link to="/register" class="text-[1.15rem]">
-          <button class="bg-orange-600 text-white px-6 py-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600 hover:bg-white">Sign up</button>
+          <button class="xs:text-[1rem] lg:text-xl md:text-[1.2rem] sm:text-[1rem] bg-orange-600 text-white px-6 py-1 rounded-md transform scale-100 hover:scale-105 hover:text-orange-600 hover:bg-white">Sign up</button>
         </router-link>
       </div>
     </header>

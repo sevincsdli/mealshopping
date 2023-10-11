@@ -118,6 +118,7 @@ export default createStore({
   },
   getters: {},
   mutations: {
+   
     addToCart(state,payload){
       let item=payload;
       item=
@@ -139,6 +140,7 @@ export default createStore({
       }
       state.cartItemCount++
     },
+ 
     removeItem(state,payload){
       let item=payload;
       item=
@@ -153,7 +155,9 @@ export default createStore({
             state.cartItems[itemIndex]["quantity"]-=1;
             state.cartItemCount--
           }
-      
+          if (itemIndex !== -1) {
+            state.cartItems.splice(itemIndex, 1);
+          }
         }
        
       }

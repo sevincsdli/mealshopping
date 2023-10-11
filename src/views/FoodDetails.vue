@@ -37,7 +37,7 @@
       </p>
     </div>
 
-    <div class="buttons flex gap-2 mt-8">
+    <div class="buttons flex gap-2 mt-8  xl:flex-row lg:flex-row xs:flex-col ">
       <button
         class="bg-orange-500 text-white rounded-md px-8 py-2 hover:bg-orange-600"
         @click="goToCart()"
