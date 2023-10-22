@@ -24,7 +24,14 @@
                           Not user? <a href="#" class="font-medium text-sky-600 hover:underline " @click="goToSignUp()">Sign up</a>
                       </p>
                   </form>
+                  <p class="text-center text-blue-700 text-[1.1rem]">
+                {{ info }}
+              </p>
+              <p class="text-center text-red-600 text-[1.1rem]">
+                {{ error }}
+              </p>
               </div>
+            
           </div>
       </div>
     </section>
@@ -40,7 +47,9 @@
             return{
              email:"",
              password:"",
-             repassword:""
+             repassword:"",
+             info:"",
+         error:""
             }
         },
         methods:
@@ -53,11 +62,14 @@
               password: this.password,
             });
             console.log('OK:', response.data);
+            this.info=response.data;
+
             const token = response.data.token;
           localStorage.setItem('Token', token);
             this.email = '';
             this.password = '';
           } catch (error) {
+            this.error=error.message;
             console.error('Login failed:::', error);
           }
             },
